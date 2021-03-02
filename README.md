@@ -10,6 +10,8 @@ Also see `package.json`
 yarn add expo@38
 expo install react@16.11.0 react-dom@16.11.0 react-native@https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz
 expo install react-native-elements@2.2.1
+expo install react-navigation@4
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view react-navigation-stack@1.10.3
 ```
 
 ## Dev Env
