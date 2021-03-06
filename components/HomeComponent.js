@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { View, Text, ScrollView } from 'react-native'
 import { Card } from 'react-native-elements'
+import About from './AboutComponent'
+import Contact from './ContactComponent'
 import { CAMPSITES } from '../shared/campsites'
 import { PROMOTIONS } from '../shared/promotions'
 import { PARTNERS } from '../shared/partners'
