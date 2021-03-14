@@ -16,10 +16,12 @@ expo install react-navigation@4
 expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view react-navigation-stack@1.10.3
 expo install react-navigation-drawer
 expo install @react-native-community/datetimepicker
+expo install react-native-swipe-list-view
 ```
 
 ## Dev Env
 
 1. Get Expo set up on machine
 2. Copy repo locally
-3. Once all setup, run `expo start` to start app
+3. Run `expo install` to install dependencies
+4. Once all setup, run `expo start` to start app
