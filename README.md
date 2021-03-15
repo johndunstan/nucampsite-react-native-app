@@ -17,6 +17,7 @@ expo install react-native-gesture-handler react-native-reanimated react-native-s
 expo install react-navigation-drawer
 expo install @react-native-community/datetimepicker
 expo install react-native-swipe-list-view
+expo install react-native-animatable
 ```
 
 ## Dev Env

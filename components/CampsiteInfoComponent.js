@@ -6,26 +6,27 @@ import {
   FlatList,
   Modal,
   Button,
-  StyleSheet,
+  StyleSheet
 } from 'react-native'
 import { Card, Icon, Input } from 'react-native-elements'
 import { Rating } from 'react-native-elements'
 import { connect } from 'react-redux'
 import { baseUrl } from '../shared/baseUrl'
 import { postFavorite, postComment } from '../redux/ActionCreators'
+import * as Animatable from 'react-native-animatable'
 
 const mapStateToProps = (state) => {
   return {
     campsites: state.campsites,
     comments: state.comments,
-    favorites: state.favorites,
+    favorites: state.favorites
   }
 }
 
 const mapDispatchToProps = {
   postFavorite: (campsiteId) => postFavorite(campsiteId),
   postComment: (campsiteId, rating, author, text) =>
-    postComment(campsiteId, rating, author, text),
+    postComment(campsiteId, rating, author, text)
 }
 
 function RenderCampsite(props) {
@@ -33,34 +34,36 @@ function RenderCampsite(props) {
 
   if (campsite) {
     return (
-      <Card
-        featuredTitle={campsite.name}
-        image={{ uri: baseUrl + campsite.image }}
-      >
-        <Text style={{ margin: 10 }}>{campsite.description}</Text>
-        <View style={styles.cardRow}>
-          <Icon
-            name={props.favorite ? 'heart' : 'heart-o'}
-            type="font-awesome"
-            color="#f50"
-            raised
-            reverse
-            onPress={() =>
-              props.favorite
-                ? console.log('Already set as a favorite')
-                : props.markFavorite()
-            }
-          />
-          <Icon
-            name="pencil"
-            type="font-awesome"
-            color="#5637DD"
-            raised
-            reverse
-            onPress={() => props.onShowModal()}
-          />
-        </View>
-      </Card>
+      <Animatable.View animation="fadeInDown" duration={2000} delay={1000}>
+        <Card
+          featuredTitle={campsite.name}
+          image={{ uri: baseUrl + campsite.image }}
+        >
+          <Text style={{ margin: 10 }}>{campsite.description}</Text>
+          <View style={styles.cardRow}>
+            <Icon
+              name={props.favorite ? 'heart' : 'heart-o'}
+              type="font-awesome"
+              color="#f50"
+              raised
+              reverse
+              onPress={() =>
+                props.favorite
+                  ? console.log('Already set as a favorite')
+                  : props.markFavorite()
+              }
+            />
+            <Icon
+              name="pencil"
+              type="font-awesome"
+              color="#5637DD"
+              raised
+              reverse
+              onPress={() => props.onShowModal()}
+            />
+          </View>
+        </Card>
+      </Animatable.View>
     )
   }
   return <View />
@@ -85,13 +88,15 @@ function RenderComments({ comments }) {
   }
 
   return (
-    <Card title="Comments">
-      <FlatList
-        data={comments}
-        renderItem={renderCommentItem}
-        keyExtractor={(item) => item.id.toString()}
-      />
-    </Card>
+    <Animatable.View animation="fadeInUp" duration={2000} delay={1000}>
+      <Card title="Comments">
+        <FlatList
+          data={comments}
+          renderItem={renderCommentItem}
+          keyExtractor={(item) => item.id.toString()}
+        />
+      </Card>
+    </Animatable.View>
   )
 }
 
@@ -102,7 +107,7 @@ class CampsiteInfo extends Component {
       showModal: false,
       rating: 5,
       author: '',
-      text: '',
+      text: ''
     }
   }
 
@@ -125,7 +130,7 @@ class CampsiteInfo extends Component {
       showModal: false,
       rating: 5,
       author: '',
-      text: '',
+      text: ''
     })
   }
 
@@ -134,7 +139,7 @@ class CampsiteInfo extends Component {
   }
 
   static navigationOptions = {
-    title: 'Campsite Information',
+    title: 'Campsite Information'
   }
 
   render() {
@@ -216,12 +221,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flex: 1,
     flexDirection: 'row',
-    margin: 20,
+    margin: 20
   },
   modal: {
     justifyContent: 'center',
-    margin: 20,
-  },
+    margin: 20
+  }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CampsiteInfo)
