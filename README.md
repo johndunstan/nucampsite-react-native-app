@@ -18,6 +18,7 @@ expo install react-navigation-drawer
 expo install @react-native-community/datetimepicker
 expo install react-native-swipe-list-view
 expo install react-native-animatable
+expo install redux-persist@5.9.1
 ```
 
 ## Dev Env
