@@ -33,7 +33,7 @@ class Reservation extends Component {
     Alert.alert(
       'Begin search?',
       `Number of Campers: ${this.state.campers}\n\nHike-In? ${
-        this.state.hikeIn
+        this.state.hikeInex
       }\n\nDate: ${this.state.date.toLocaleDateString('en-US')}`,
       [
         {
