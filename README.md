@@ -21,6 +21,7 @@ expo install react-native-animatable
 expo install redux-persist@5.9.1
 expo install expo-secure-store
 expo install expo-notifications@~0.3.3
+expo install expo-mail-composer
 ```
 
 ## Dev Env
