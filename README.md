@@ -25,6 +25,7 @@ expo install expo-mail-composer
 expo install expo-image-picker@8
 react-navigation-tabs
 expo-permissions@9
+expo install @react-native-community/netinfo@5
 ```
 
 ## Dev Env
