@@ -26,6 +26,7 @@ expo install expo-image-picker@8
 react-navigation-tabs
 expo-permissions@9
 expo install @react-native-community/netinfo@5
+expo install expo-image-manipulator@8
 ```
 
 ## Dev Env
